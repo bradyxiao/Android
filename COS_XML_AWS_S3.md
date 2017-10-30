@@ -1,4 +1,4 @@
-[对照 COS_XML_V2版本测试 AWS S3 Android SDK接口]##
+##[对照 COS_XML_V2版本测试 AWS S3 Android SDK接口]
 
 Service 接口
 
