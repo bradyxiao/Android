@@ -26,10 +26,17 @@ String bucket = "tjtest-1253653367"; // 是cos中 appid = 1253653367, bucket = "
 3）签名：因为 aws s3 sdk中 默认使用的签名 为 aws s3 v4 版本，且 改签名会修改 body即 会加上 chunk-signature header(如图所示),但是 cos 后台目前不支持，因此，需要修改，如在 body中不使用 chunk-signature header；
 ![](https://github.com/bradyxiao/Android/blob/master/s3.jpg)
 
+修改：取消 chunk-signature
+```java
+com.amazonaws.services.s3.internal.AWSS3V4Signer.useChunkEncoding(Request<?> request){
+	returen false;
+}
+```
+
 #Service 接口
 
 <table>
-<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 api</th></tr>
+<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 sdk api</th></tr>
 
 <tr><th>getService</th><th>兼容</th><th>listBuckets</th></tr>
 </table>
@@ -37,7 +44,7 @@ String bucket = "tjtest-1253653367"; // 是cos中 appid = 1253653367, bucket = "
 #Bucket 接口
 
 <table>
-<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 api</th></tr>
+<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 sdk api</th></tr>
 
 <tr><th>put bucket</th><th>兼容</th><th> createBucket</th></tr>
 
@@ -71,7 +78,7 @@ String bucket = "tjtest-1253653367"; // 是cos中 appid = 1253653367, bucket = "
 #Object 接口
 
 <table>
-<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 api</th></tr>
+<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 sdk api</th></tr>
 
 <tr><th>put object</th><th>兼容</th><th> putObject</th></tr>
 
