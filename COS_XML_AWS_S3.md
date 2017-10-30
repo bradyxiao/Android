@@ -51,7 +51,7 @@ Object 接口
 
 <tr><th>delete multiple objects</th><th>兼容</th><th> deleteObjects</th></tr>
 
-<tr><th>append object</th><th>兼容</th><th> 无</th></tr>
+<tr><th>append object</th><th>不兼容</th><th> 无</th></tr>
 
 <tr><th>initate multipart upload</th><th>兼容</th><th>initiateMultipartUpload</th></tr>
 
@@ -63,11 +63,11 @@ Object 接口
 
 <tr><th>abort multipart upload</th><th>兼容</th><th>abortMultipartUpload</th></tr>
 
-<tr><th>put object copy</th><th>兼容</th><th> 出错，因为 cos的 x-cos-copy-source 与 aws s3 的 x-cos-copy-source定义不一样</th></tr>
+<tr><th>put object copy</th><th>不兼容</th><th> 出错，因为 cos的 x-cos-copy-source 与 aws s3 的 x-cos-copy-source定义不一样</th></tr>
 
 <tr><th>put object acl</th><th>兼容</th><th>setObjectAcl</th></tr>
 
 <tr><th>get object acl</th><th>兼容</th><th>getObjectAcl</th></tr>
 
-<tr><th>options object</th><th>兼容</th><th> 无</th></tr>
+<tr><th>options object</th><th>不兼容</th><th> 无</th></tr>
 </table>
