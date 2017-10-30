@@ -1,14 +1,20 @@
 ##[对照 COS_XML_V2版本测试 AWS S3 Android SDK接口]
 
-Service 接口
+
+
+#Service 接口
 
 <table>
+<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 api</th></tr>
+
 <tr><th>getService</th><th>兼容</th><th>listBuckets</th></tr>
 </table>
 
-Bucket 接口
+#Bucket 接口
 
 <table>
+<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 api</th></tr>
+
 <tr><th>put bucket</th><th>兼容</th><th> createBucket</th></tr>
 
 <tr><th>head bucet</th><th>兼容</th><th> doesBucketExist</th></tr>
@@ -38,9 +44,11 @@ Bucket 接口
 <tr><th>delete bucket</th><th>兼容</th><th> deleteBucket</th></tr>
 </table>
 
-Object 接口
+#Object 接口
 
 <table>
+<tr><th>cos xml api</th><th>是否兼容</th><th> aws s3 api</th></tr>
+
 <tr><th>put object</th><th>兼容</th><th> putObject</th></tr>
 
 <tr><th>get object</th><th>兼容</th><th> getObject</th></tr>
