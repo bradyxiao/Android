@@ -1,10 +1,11 @@
 ##[对照 COS_XML_V2版本测试 AWS S3 Android SDK接口]##
+|:.......|:......|
+|#COS XML 接口 |#AWS S3 接口（AmazonS3Client）|
 
-#COS XML 接口（CosXmlService）| AWS S3 接口（AmazonS3Client）
+|##Service 接口||
 
-##Service 接口
-
-#getService:listBuckets
+|#getService:listBuckets||
+    
 
 ##Bucket 接口
 
@@ -45,11 +46,11 @@
 
 #head object: doesObjectExist
 
-#delete object|: deleteObject
+#delete object: deleteObject
 
 #delete multiple objects: deleteObjects
 
-#append object:
+#append object: 无
 
 #initate multipart upload:initiateMultipartUpload
 
@@ -61,13 +62,13 @@
 
 #abort multipart upload:abortMultipartUpload
 
-#put object copy:copyObject
+#put object copy: 出错，因为 cos的 x-cos-copy-source 与 aws s3 的 x-cos-copy-source定义不一样
 
 #put object acl:setObjectAcl
 
 #get object acl:getObjectAcl
 
-#options object:
+#options object: 无
 
 
 
