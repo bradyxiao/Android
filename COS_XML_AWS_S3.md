@@ -1,5 +1,5 @@
 ##[对照 COS_XML_V2版本测试 AWS S3 Android SDK接口]##
-|:.......|:......|
+|:.......:|:......:|
 |#COS XML 接口 |#AWS S3 接口（AmazonS3Client）|
 
 |##Service 接口||
