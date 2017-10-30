@@ -1,6 +1,30 @@
 ##[对照 COS_XML_V2版本测试 AWS S3 Android SDK接口]
 
+#测试前准备：
+1）域名：aws s3 android sdk中请求域名格式是 bucket.region.amazonaws.com；而 cos的域名格式为 bucket-appid.cos.region.myqcloud.com; 因此，需要在 aws s3 android sdk中修改 region配置，即添加 cos的region,
+如下所述,在 com.amazonaws.regions.RegionDefaults中添加cos region配置：
+```java
+Reion region = new Region("ap-beijing-1","");
+ret.add(region);
+updateRegion(region, "s3", "cos.ap-beijing-1.myqcloud.com", true, false);
 
+Reion region = new Region("cn-south","");
+ret.add(region);
+updateRegion(region, "s3", "cn-south.myqcloud.com", true, false);
+
+Region region = new Region("service.cos", "");
+ret.add(region);
+updateRegion(region, "s3", "service.cos.myqcloud.com", true, false);
+```
+
+2）bucket: 因为aws s3 sdk中 bucket作为请求域名的一部分，是必须参数，参照 1），得出 访问cos时，需要将
+cos的 bucket-appid 这种格式 作为 aws s3 sdk中 bucket值.如：
+```java
+String bucket = "tjtest-1253653367"; // 是cos中 appid = 1253653367, bucket = "tjtest";
+```
+
+3）签名：因为 aws s3 sdk中 默认使用的签名 为 aws s3 v4 版本，且 改签名会修改 body即 会加上 chunk-signature header(如图所示),但是 cos 后台目前不支持，因此，需要修改，如在 body中不使用 chunk-signature header；
+![](https://github.com/bradyxiao/Android/blob/master/s3.jpg)
 
 #Service 接口
 
